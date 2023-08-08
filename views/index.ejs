@@ -1,0 +1,254 @@
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>Bettercode-Status</title>
+    <script src='https://cdn.tailwindcss.com'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  </head>
+  <body>
+
+    <div class='dark:bg-dark   mx-auto lg:w-6/12 px-10 w-full'>
+      <header class='pb-4  pt-2  border-b-2 border-gray-100  '>
+        <div
+          class='container flex flex-col items-center md:flex-row justify-between '
+        >
+          <div class='logo mb-4 md:mb-0 text-gray-800 dark:text-gray-100'>
+           <span class="bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent font-bold text-xl">Bettercode Status</span>
+          </div>
+          <div
+            class='links flex space-x-2 items-center leading-none font-medium'
+          >
+    
+            <a
+            href=""
+              class='inline-flex items-center px-4 py-2 bg-gray-100 dark:border-dark rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-gray-100  dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2'
+            >
+
+              
+              Donate
+        </a>
+ 
+          </div>
+        </div>
+       
+      </header>
+
+      <div class='container'>
+       
+
+
+        <% let showText = false; %>
+<% allLogs.forEach((item) => { %>
+<% if (item.logs[item.logs.length - 1] === false) { %>
+<% showText = true; %>
+<% } %>
+<% }) %>
+
+
+        <% if (showText) { %>
+
+
+          <div
+          class='flex items-center  bg-gray-100 text-gray-700 font-bold  text-xl heading-small text-statuspage-neutral-800  rounded-lg p-5 mt-2 md:mt-12 status '
+        >
+          <svg
+            class='mr-4'
+            width='29'
+            height='29'
+            fill='currentColor'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M12.3733 0c6.8363 0 12.3734 2.87113 12.3734 6.41593 0 3.5448-5.5371 6.41597-12.3734 6.41597C5.53707 12.8319 0 9.96073 0 6.41593 0 2.87113 5.53707 0 12.3733 0zM0 9.62389c0 3.54481 5.53707 6.41591 12.3733 6.41591 6.8363 0 12.3734-2.8711 12.3734-6.41591v4.94031L23.2 14.4358c-4.0059 0-7.424 2.6306-8.7232 6.3197l-2.1035.0963C5.53707 20.8518 0 17.9806 0 14.4358V9.62389zm0 8.01991c0 3.5448 5.53707 6.4159 12.3733 6.4159H13.92c0 1.6842.4176 3.2722 1.16 4.6516l-2.7067.1604C5.53707 28.8717 0 26.0006 0 22.4558v-4.812zM21.6533 29L17.4 24.1881l1.7941-1.8607 2.4592 2.5343 5.5526-5.7422L29 21.3811 21.6533 29z'
+            ></path>
+          </svg>
+
+
+
+
+
+
+
+          Some containers are down
+
+
+        </div>
+
+
+        <% } else { %> 
+          
+          <div
+          class='flex items-center  bg-gray-100 text-gray-700 font-bold  text-xl heading-small text-statuspage-neutral-800  rounded-lg p-5 mt-2 md:mt-12 status '
+        >
+          <svg
+            class='mr-4'
+            width='29'
+            height='29'
+            fill='currentColor'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <path
+              d='M12.3733 0c6.8363 0 12.3734 2.87113 12.3734 6.41593 0 3.5448-5.5371 6.41597-12.3734 6.41597C5.53707 12.8319 0 9.96073 0 6.41593 0 2.87113 5.53707 0 12.3733 0zM0 9.62389c0 3.54481 5.53707 6.41591 12.3733 6.41591 6.8363 0 12.3734-2.8711 12.3734-6.41591v4.94031L23.2 14.4358c-4.0059 0-7.424 2.6306-8.7232 6.3197l-2.1035.0963C5.53707 20.8518 0 17.9806 0 14.4358V9.62389zm0 8.01991c0 3.5448 5.53707 6.4159 12.3733 6.4159H13.92c0 1.6842.4176 3.2722 1.16 4.6516l-2.7067.1604C5.53707 28.8717 0 26.0006 0 22.4558v-4.812zM21.6533 29L17.4 24.1881l1.7941-1.8607 2.4592 2.5343 5.5526-5.7422L29 21.3811 21.6533 29z'
+            ></path>
+          </svg>
+
+
+
+
+
+
+
+          All containers are online
+
+
+        </div>
+          
+          <% } %> %>
+        
+
+
+    
+        
+
+    </div>
+      <main>
+
+      
+
+      
+        <div class="monitors mt-10 space-y-6 border-2 border-gray-100 rounded-lg p-5">
+          <h2
+          class='my-1  container text-sm p-2  text-gray-600 font-semibold dark:text-gray-300'
+        >
+          Current status by service
+        </h2>
+
+          <% allLogs.forEach(function(item) { %>
+
+
+
+
+
+
+
+
+
+
+          <div class="monitor  bg-gray-100 bg-opacity-10 py-1 border-b-2 border-gray-100 rounded-lg mb-2 p-4 rounded-lg ox-data="bars()">
+            <div class="container flex items-center justify-between mb-3">
+              <h3 class="text-sm text-gray-600 font-bold">
+                
+                
+                
+                <%= item.appName %></h3>
+
+              <% if (item.logs[item.logs.length - 1] === true) { %>
+
+                <div class="flex items-center">
+                  <div class="w-3 animate-bounce  h-3 rounded-full bg-emerald-600  mr-2"></div>
+                  <p class="text-emerald-600 font-semibold">Operational</p>
+                </div>
+
+
+              <% } else { %>
+                <div class="flex items-center">
+                  <div class="w-3 animate-bounce  h-3 rounded-full bg-red-500 mr-2"></div>
+                  <p class="text-red-600 font-semibold">Downtime</p>
+
+                </div>
+
+                <% } %>
+
+
+            </div>
+
+
+            <div class="container bars">
+              <div class="flex space-x-px">
+                <template x-on:resize.window="count = calculate()" x-for="i in count">
+                  <div class="bars bg-green-400 flex-1 h-10 rounded hover:opacity-80 cursor-pointer"></div>
+                </template>
+              
+                <% for (let i = 0; i < item.emptyRenderFields; i++) { %>
+                  <div class="bars bg-gray-300 flex-1 h-7 rounded hover:opacity-80 cursor-pointer"></div>
+
+                  <% } %>
+
+
+                <% item.logs.forEach(function(item) { %>
+
+                  <% if (item === true) { %>
+
+                  <div class="bars bg-emerald-600 flex-1 h-7 rounded hover:opacity-80 cursor-pointer"></div>
+                
+                  <% } else { %>
+                    <div class="bars bg-red-700 flex-1 h-7 rounded hover:opacity-80 cursor-pointer"></div>
+
+
+                    <% } %>
+
+
+                  <% }); %>
+
+                </div>
+            </div>
+            <div class="container mt-2">
+              <div class="flex items-center">
+                <span class="pr-2 flex-shrink-0 text-gray-600 text-xs font-semibold" x-text="count + ' days ago'">90 days ago</span>
+                <div class="h-px bg-green-500 w-full"></div>
+
+
+                <span class="px-2 flex-shrink-0 text-green-500 text-xs font-bold"><%= item.originLogsLength %>% Uptime</span>
+
+                <div class="h-px bg-green-500 w-full"></div>
+                <span class="pl-2 flex-shrink-0 text-gray-600 font-bold text-xs font-semibold">Today</span>
+              </div>
+            </div>
+          </div>
+          
+
+
+          
+
+
+
+
+
+
+
+
+
+          <% }); %>
+
+          
+        </div>
+
+
+
+        
+
+
+
+
+      </main>
+
+      <footer
+        class='py-4 text-gray-700 text-xs  my-12  mt-20'
+      >
+        <div class='container flex justify-center font-bold text-gray-500'>
+          
+          <div>
+            Powered by
+            <span
+              class=' text-black font-bold text-gray-700 '
+            ><a href="https://bettercode.ir">Bettercode</a></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+
+</html>

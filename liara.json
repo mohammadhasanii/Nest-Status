@@ -1,0 +1,8 @@
+{
+    "disks": [
+      {
+        "name": "my-storage",
+        "mountTo": "/app/public"
+      }
+    ]
+  }
