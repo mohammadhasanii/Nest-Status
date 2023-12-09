@@ -17,7 +17,7 @@ export class AppController {
    //const x= await this.appService.getStatusApp() //call send all request to applications
     //const applications=await this.appService.getApplications()
     const allLogs=await this.appService.getRecentLogsByAppName()
-    return { message: 'Hello world!' ,allLogs,PiGithubLogoThin};
+    return { allLogs,PiGithubLogoThin};
   }
 
 }
